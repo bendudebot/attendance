@@ -1,0 +1,10 @@
+{
+  "name": "attendance-mockups",
+  "version": "1.0.0",
+  "scripts": {
+    "generate": "node generate-screenshots.js"
+  },
+  "dependencies": {
+    "puppeteer": "^22.0.0"
+  }
+}

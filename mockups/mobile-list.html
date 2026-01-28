@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=430, height=932">
+  <title>Mobile - Students List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; box-sizing: border-box; }
+    body { 
+      background: linear-gradient(135deg, #F0F4F8 0%, #E2E8F0 100%); 
+      width: 430px; 
+      height: 932px; 
+      margin: 0; 
+      padding: 0;
+      overflow: hidden;
+    }
+    .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.3); }
+  </style>
+</head>
+<body>
+  <div class="h-full flex flex-col">
+    <!-- Status Bar -->
+    <div class="h-[59px] flex items-end justify-between px-8 pb-2">
+      <span class="text-sm font-semibold text-slate-800">9:41</span>
+      <div class="flex items-center gap-1">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3C7.46 3 3.34 4.78.29 7.67c-.18.18-.29.43-.29.71s.11.53.29.71l11 11c.18.18.43.29.71.29s.53-.11.71-.29l11-11c.18-.18.29-.43.29-.71s-.11-.53-.29-.71C20.66 4.78 16.54 3 12 3z"/></svg>
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M2 22h20V2z"/></svg>
+        <div class="w-7 h-3 rounded-sm border border-slate-800 relative">
+          <div class="absolute inset-0.5 rounded-sm bg-slate-800" style="width: 70%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="px-6 pt-4 pb-4">
+      <h1 class="text-2xl font-bold text-slate-800">Étudiants</h1>
+      <p class="text-slate-500 mt-1">INFO-101 • 24 étudiants</p>
+    </div>
+
+    <!-- Search -->
+    <div class="px-6 mb-4">
+      <div class="glass rounded-xl px-4 py-3 flex items-center gap-3">
+        <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <input type="text" placeholder="Rechercher..." class="flex-1 bg-transparent outline-none text-slate-800 placeholder-slate-400">
+      </div>
+    </div>
+
+    <!-- Students List -->
+    <div class="flex-1 px-6 overflow-y-auto pb-4">
+      <div class="space-y-3">
+        <!-- Student 1 -->
+        <div class="glass rounded-2xl p-4">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold text-lg">AM</div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-slate-800">Martin Alice</h3>
+              <p class="text-sm text-slate-500">STU001</p>
+              <div class="flex items-center gap-4 mt-1">
+                <span class="text-xs text-emerald-600 flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  24 présences
+                </span>
+                <span class="text-xs text-slate-500">95% assiduité</span>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- Student 2 -->
+        <div class="glass rounded-2xl p-4">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white font-bold text-lg">BB</div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-slate-800">Bernard Bob</h3>
+              <p class="text-sm text-slate-500">STU002</p>
+              <div class="flex items-center gap-4 mt-1">
+                <span class="text-xs text-emerald-600 flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  22 présences
+                </span>
+                <span class="text-xs text-slate-500">88% assiduité</span>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- Student 3 - Low Attendance -->
+        <div class="glass rounded-2xl p-4 border-l-4 border-amber-500">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white font-bold text-lg">CP</div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-slate-800">Petit Charlie</h3>
+              <p class="text-sm text-slate-500">STU003</p>
+              <div class="flex items-center gap-4 mt-1">
+                <span class="text-xs text-amber-600 flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                  14 présences
+                </span>
+                <span class="text-xs text-amber-600 font-medium">58% assiduité ⚠️</span>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- Student 4 -->
+        <div class="glass rounded-2xl p-4">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center text-white font-bold text-lg">DD</div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-slate-800">Durand Diana</h3>
+              <p class="text-sm text-slate-500">STU004</p>
+              <div class="flex items-center gap-4 mt-1">
+                <span class="text-xs text-emerald-600 flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  23 présences
+                </span>
+                <span class="text-xs text-slate-500">92% assiduité</span>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- Student 5 -->
+        <div class="glass rounded-2xl p-4">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white font-bold text-lg">TE</div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-slate-800">Thomas Eve</h3>
+              <p class="text-sm text-slate-500">STU005</p>
+              <div class="flex items-center gap-4 mt-1">
+                <span class="text-xs text-emerald-600 flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  25 présences
+                </span>
+                <span class="text-xs text-slate-500">100% assiduité</span>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- Student 6 -->
+        <div class="glass rounded-2xl p-4">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center text-white font-bold text-lg">FR</div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-slate-800">Robert Frank</h3>
+              <p class="text-sm text-slate-500">STU006</p>
+              <div class="flex items-center gap-4 mt-1">
+                <span class="text-xs text-emerald-600 flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  21 présences
+                </span>
+                <span class="text-xs text-slate-500">84% assiduité</span>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- Student 7 -->
+        <div class="glass rounded-2xl p-4">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center text-white font-bold text-lg">GR</div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-slate-800">Richard Grace</h3>
+              <p class="text-sm text-slate-500">STU007</p>
+              <div class="flex items-center gap-4 mt-1">
+                <span class="text-xs text-emerald-600 flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  24 présences
+                </span>
+                <span class="text-xs text-slate-500">96% assiduité</span>
+              </div>
+            </div>
+            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab Bar -->
+    <div class="glass border-t border-white/30 px-6 py-3 flex justify-around" style="padding-bottom: 34px;">
+      <div class="flex flex-col items-center gap-1">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center">
+          <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        </div>
+        <span class="text-xs font-medium text-slate-400">Présences</span>
+      </div>
+      <div class="flex flex-col items-center gap-1">
+        <div class="w-10 h-10 rounded-xl bg-blue-500 flex items-center justify-center">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/></svg>
+        </div>
+        <span class="text-xs font-medium text-blue-600">Étudiants</span>
+      </div>
+      <div class="flex flex-col items-center gap-1">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center">
+          <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <span class="text-xs font-medium text-slate-400">Historique</span>
+      </div>
+      <div class="flex flex-col items-center gap-1">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center">
+          <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        </div>
+        <span class="text-xs font-medium text-slate-400">Profil</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,90 +1,219 @@
-# 🎓 Attendance Tracker
+<p align="center">
+  <img src="https://raw.githubusercontent.com/bendudebot/attendance/main/screenshots/logo.svg" width="80" height="80" alt="Attendance Tracker Logo">
+</p>
 
-**Modern student attendance tracking system with Apple Glass design**
+<h1 align="center">🎓 Attendance Tracker</h1>
 
-*Système de suivi des présences avec design Apple Glass moderne*
+<p align="center">
+  <strong>Beautiful student attendance tracking system with Apple Glass design</strong>
+</p>
+
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#screenshots">Screenshots</a> •
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#tech-stack">Tech Stack</a> •
+  <a href="#api-documentation">API</a> •
+  <a href="#deployment">Deployment</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js">
+  <img src="https://img.shields.io/badge/Next.js-14-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js">
+  <img src="https://img.shields.io/badge/PostgreSQL-15-336791?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL">
+  <img src="https://img.shields.io/badge/Prisma-5.10-2D3748?style=flat-square&logo=prisma&logoColor=white" alt="Prisma">
+  <img src="https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker">
+  <img src="https://img.shields.io/badge/TypeScript-5.3-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript">
+</p>
 
 ---
 
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
-![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-
-## 📱 Screenshots
-
-<p align="center">
-  <img src="screenshots/web-dashboard.png" width="600" alt="Dashboard" />
-</p>
-<p align="center"><em>Web Dashboard - Overview</em></p>
-
-<p align="center">
-  <img src="screenshots/web-attendance.png" width="600" alt="Attendance Grid" />
-</p>
-<p align="center"><em>Attendance Grid - Mark presence</em></p>
-
-<p align="center">
-  <img src="screenshots/mobile-home.png" width="250" alt="Mobile App" />
-  <img src="screenshots/mobile-list.png" width="250" alt="Mobile List" />
-</p>
-<p align="center"><em>Mobile App - Quick attendance</em></p>
-
 ## ✨ Features
 
-### Web Dashboard (Admin/Teacher)
-- 📊 **Dashboard** - Overview with stats and charts
-- 👥 **Student Management** - CRUD with CSV import
-- 📚 **Class Management** - Create and manage classes
-- ✅ **Attendance Grid** - Interactive presence marking
-- 📈 **Reports** - Attendance rates, trends, exports
-- 🔔 **Notifications** - Alerts for repeated absences
-- 📤 **Export** - PDF and Excel reports
+### 📊 Dashboard
+- Real-time attendance overview
+- Today's session summary
+- Quick action buttons
+- Attendance alerts for low-performing students
 
-### Mobile App (Teacher)
-- 🚀 **Quick Attendance** - Swipe to mark
-- 📋 **Class List** - View students
-- 📅 **History** - Daily attendance log
-- 🔔 **Push Notifications**
+### 👥 Student Management
+- Full CRUD operations
+- CSV import support
+- Search and filter by class
+- Individual attendance history
 
-## 🏗️ Architecture
+### 📚 Class Management
+- Create and organize classes
+- Assign teachers
+- View class statistics
+- Generate attendance reports
 
+### ✅ Attendance Tracking
+- Interactive attendance grid
+- One-click status changes (Present/Absent/Late/Excused)
+- Bulk operations
+- Quick attendance mode
+
+### 📈 Reports & Analytics
+- Detailed attendance reports
+- Export to CSV/Excel
+- Low attendance alerts
+- Trend analysis
+
+### 🔐 Authentication
+- JWT-based authentication
+- Role-based access (Admin/Teacher)
+- Secure password handling
+
+---
+
+## 📸 Screenshots
+
+### Web Dashboard
+<p align="center">
+  <img src="screenshots/web-dashboard.png" width="800" alt="Dashboard">
+</p>
+
+### Attendance Grid
+<p align="center">
+  <img src="screenshots/web-attendance.png" width="800" alt="Attendance">
+</p>
+
+### Students List
+<p align="center">
+  <img src="screenshots/web-students.png" width="800" alt="Students">
+</p>
+
+### Reports
+<p align="center">
+  <img src="screenshots/web-reports.png" width="800" alt="Reports">
+</p>
+
+### Mobile App
+<p align="center">
+  <img src="screenshots/mobile-home.png" width="250" alt="Mobile Home">
+  <img src="screenshots/mobile-list.png" width="250" alt="Mobile List">
+  <img src="screenshots/mobile-history.png" width="250" alt="Mobile History">
+</p>
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Docker & Docker Compose
+- Node.js 18+ (for local development)
+
+### Using Docker (Recommended)
+
+```bash
+# Clone the repository
+git clone https://github.com/bendudebot/attendance.git
+cd attendance
+
+# Start the services
+cd backend
+docker-compose up -d
+
+# Run migrations and seed data
+docker-compose exec api npx prisma migrate deploy
+docker-compose exec api npx prisma db seed
+
+# The API is now running at http://localhost:3001
 ```
-attendance/
-├── backend/          # Node.js + Express + Prisma
-│   ├── src/
-│   │   ├── routes/   # API endpoints
-│   │   ├── middleware/
-│   │   └── services/
-│   ├── prisma/       # Database schema
-│   └── docker-compose.yml
-├── web/              # Next.js 14 (App Router)
-│   ├── app/
-│   │   ├── (auth)/   # Login, Register
-│   │   └── (dashboard)/
-│   └── components/   # Glass UI components
-└── mobile/           # React Native Expo
-    ├── app/          # Expo Router
-    └── components/
+
+### Local Development
+
+```bash
+# Backend
+cd backend
+cp .env.example .env
+npm install
+npm run db:migrate
+npm run db:seed
+npm run dev
+
+# Frontend (in another terminal)
+cd web
+npm install
+npm run dev
 ```
 
-## 🗄️ Database Schema
+### Test Accounts
+
+| Role    | Email                    | Password    |
+|---------|--------------------------|-------------|
+| Admin   | admin@attendance.app     | admin123    |
+| Teacher | teacher@attendance.app   | teacher123  |
+
+---
+
+## 🛠 Tech Stack
+
+### Backend
+- **Runtime**: Node.js 18+
+- **Framework**: Express.js
+- **Database**: PostgreSQL 15
+- **ORM**: Prisma 5
+- **Authentication**: JWT
+- **Validation**: express-validator
+
+### Frontend (Web)
+- **Framework**: Next.js 14 (App Router)
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Charts**: Recharts
+
+### Mobile
+- **Framework**: React Native (Expo)
+- **Navigation**: Expo Router
+
+### Infrastructure
+- **Containerization**: Docker
+- **Database**: PostgreSQL (Alpine)
+
+---
+
+## 📖 API Documentation
+
+See [docs/API.md](docs/API.md) for full API documentation.
+
+### Quick Reference
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/auth/login` | User login |
+| POST | `/api/auth/register` | User registration |
+| GET | `/api/classes` | List all classes |
+| GET | `/api/students` | List all students |
+| POST | `/api/attendance/mark` | Mark attendance |
+| GET | `/api/attendance/today` | Today's summary |
+
+---
+
+## 🗄 Database Schema
 
 ```mermaid
 erDiagram
     User ||--o{ Class : teaches
     Class ||--o{ Student : contains
     Class ||--o{ Session : has
-    Session ||--o{ Attendance : records
     Student ||--o{ Attendance : has
-
+    Session ||--o{ Attendance : records
+    
     User {
         string id PK
         string email UK
         string password
         string name
         enum role
+    }
+    
+    Class {
+        string id PK
+        string name
+        string code UK
+        string teacherId FK
     }
     
     Student {
@@ -95,19 +224,12 @@ erDiagram
         string classId FK
     }
     
-    Class {
-        string id PK
-        string name
-        string code UK
-        string teacherId FK
-    }
-    
     Session {
         string id PK
+        string classId FK
         datetime date
         string startTime
         string endTime
-        string classId FK
     }
     
     Attendance {
@@ -119,112 +241,106 @@ erDiagram
     }
 ```
 
-## 🚀 Quick Start
+---
 
-### Prerequisites
-- Docker & Docker Compose
-- Node.js 20+
-- npm or yarn
-
-### 1. Clone & Setup
-
-```bash
-git clone https://github.com/bendudebot/attendance.git
-cd attendance
-```
-
-### 2. Start Database
-
-```bash
-cd backend
-docker-compose up -d db
-```
-
-### 3. Setup Backend
-
-```bash
-cd backend
-npm install
-cp .env.example .env
-npx prisma migrate dev
-npx prisma db seed  # Optional: seed data
-npm run dev
-```
-
-### 4. Setup Web
-
-```bash
-cd web
-npm install
-npm run dev
-```
-
-### 5. Setup Mobile
-
-```bash
-cd mobile
-npm install
-npx expo start
-```
-
-## 🔧 Environment Variables
+## ⚙️ Environment Variables
 
 ### Backend (.env)
+
 ```env
-DATABASE_URL="postgresql://attendance:attendance123@localhost:5432/attendance"
-JWT_SECRET="your-secret-key-here"
+# Database
+DATABASE_URL="postgresql://user:password@localhost:5432/attendance"
+
+# Authentication
+JWT_SECRET="your-super-secret-jwt-key"
+
+# Server
 PORT=3001
 ```
 
-### Web (.env.local)
+### Frontend (.env.local)
+
 ```env
-NEXT_PUBLIC_API_URL=http://localhost:3001
+NEXT_PUBLIC_API_URL=http://localhost:3001/api
 ```
-
-## 📡 API Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/auth/register` | Register new user |
-| POST | `/auth/login` | Login |
-| GET | `/students` | List students |
-| POST | `/students` | Create student |
-| GET | `/classes` | List classes |
-| POST | `/classes` | Create class |
-| GET | `/sessions` | List sessions |
-| POST | `/sessions` | Create session |
-| POST | `/attendance` | Mark attendance |
-| GET | `/attendance/:sessionId` | Get session attendance |
-| GET | `/reports/class/:id` | Class attendance report |
-
-## 🎨 Design System
-
-Apple Glass design with:
-- `backdrop-filter: blur(20px)`
-- `rgba(255, 255, 255, 0.7)` backgrounds
-- Soft shadows
-- 16-20px border radius
-- Status colors:
-  - 🟢 Present: `#10B981`
-  - 🟡 Late: `#F59E0B`
-  - 🔴 Absent: `#EF4444`
-  - ⚪ Excused: `#6B7280`
-
-## 🐳 Docker Deployment
-
-```bash
-cd backend
-docker-compose up -d
-```
-
-This starts:
-- PostgreSQL database (port 5432)
-- API server (port 3001)
-
-## 📄 License
-
-MIT License
 
 ---
 
-Built with 💙 for educators.
+## 🚢 Deployment
+
+### Docker Production
+
+```bash
+# Build and run
+docker-compose -f docker-compose.prod.yml up -d
+
+# Run migrations
+docker-compose exec api npx prisma migrate deploy
+```
+
+### Manual Deployment
+
+1. Set up a PostgreSQL database
+2. Configure environment variables
+3. Build and start the backend:
+   ```bash
+   cd backend
+   npm run build
+   npm start
+   ```
+4. Build and deploy the frontend:
+   ```bash
+   cd web
+   npm run build
+   npm start
+   ```
+
+---
+
+## 📁 Project Structure
+
+```
+attendance/
+├── backend/
+│   ├── src/
+│   │   ├── index.ts          # Express server
+│   │   ├── routes/           # API routes
+│   │   ├── middleware/       # Auth middleware
+│   │   └── services/         # Business logic
+│   ├── prisma/
+│   │   ├── schema.prisma     # Database schema
+│   │   └── seed.ts           # Seed data
+│   ├── docker-compose.yml
+│   └── Dockerfile
+├── web/
+│   ├── app/                  # Next.js pages
+│   ├── components/           # React components
+│   └── lib/                  # Utilities
+├── mobile/                   # React Native app
+├── docs/                     # Documentation
+└── screenshots/              # App screenshots
+```
+
+---
+
+## 🤝 Contributing
+
+See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for contribution guidelines.
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<p align="center">
+  Made with ❤️ by <a href="https://github.com/benoitliard">Benoit Liard</a>
+</p>

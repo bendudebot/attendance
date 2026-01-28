@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=430, height=932">
+  <title>Mobile - History</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; box-sizing: border-box; }
+    body { 
+      background: linear-gradient(135deg, #F0F4F8 0%, #E2E8F0 100%); 
+      width: 430px; 
+      height: 932px; 
+      margin: 0; 
+      padding: 0;
+      overflow: hidden;
+    }
+    .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.3); }
+  </style>
+</head>
+<body>
+  <div class="h-full flex flex-col">
+    <!-- Status Bar -->
+    <div class="h-[59px] flex items-end justify-between px-8 pb-2">
+      <span class="text-sm font-semibold text-slate-800">9:41</span>
+      <div class="flex items-center gap-1">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3C7.46 3 3.34 4.78.29 7.67c-.18.18-.29.43-.29.71s.11.53.29.71l11 11c.18.18.43.29.71.29s.53-.11.71-.29l11-11c.18-.18.29-.43.29-.71s-.11-.53-.29-.71C20.66 4.78 16.54 3 12 3z"/></svg>
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M2 22h20V2z"/></svg>
+        <div class="w-7 h-3 rounded-sm border border-slate-800 relative">
+          <div class="absolute inset-0.5 rounded-sm bg-slate-800" style="width: 70%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="px-6 pt-4 pb-4">
+      <h1 class="text-2xl font-bold text-slate-800">Historique</h1>
+      <p class="text-slate-500 mt-1">Sessions récentes</p>
+    </div>
+
+    <!-- Filter Chips -->
+    <div class="px-6 mb-4 flex gap-2">
+      <button class="px-4 py-2 rounded-full bg-blue-500 text-white text-sm font-medium">Tout</button>
+      <button class="px-4 py-2 rounded-full glass text-slate-600 text-sm font-medium">INFO-101</button>
+      <button class="px-4 py-2 rounded-full glass text-slate-600 text-sm font-medium">INFO-201</button>
+      <button class="px-4 py-2 rounded-full glass text-slate-600 text-sm font-medium">WEB-101</button>
+    </div>
+
+    <!-- History List -->
+    <div class="flex-1 px-6 overflow-y-auto pb-4">
+      <!-- Today -->
+      <div class="mb-6">
+        <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-3">Aujourd'hui</h3>
+        <div class="space-y-3">
+          <div class="glass rounded-2xl p-4">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <h4 class="font-semibold text-slate-800">Introduction à la Programmation</h4>
+                <p class="text-sm text-slate-500">INFO-101 • 08:00 - 10:00</p>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-medium">Terminé</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="flex -space-x-2">
+                <div class="w-8 h-8 rounded-full bg-blue-400 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-emerald-400 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-purple-400 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-xs font-medium text-slate-600">+21</div>
+              </div>
+              <div class="flex-1 flex justify-end gap-3 text-sm">
+                <span class="text-emerald-600">21 ✓</span>
+                <span class="text-red-600">1 ✗</span>
+                <span class="text-amber-600">2 ⏰</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl p-4">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <h4 class="font-semibold text-slate-800">Structures de Données</h4>
+                <p class="text-sm text-slate-500">INFO-201 • 10:30 - 12:30</p>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-medium">Terminé</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="flex -space-x-2">
+                <div class="w-8 h-8 rounded-full bg-pink-400 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-amber-400 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-cyan-400 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-xs font-medium text-slate-600">+19</div>
+              </div>
+              <div class="flex-1 flex justify-end gap-3 text-sm">
+                <span class="text-emerald-600">20 ✓</span>
+                <span class="text-red-600">2 ✗</span>
+                <span class="text-amber-600">0 ⏰</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Yesterday -->
+      <div class="mb-6">
+        <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-3">Hier</h3>
+        <div class="space-y-3">
+          <div class="glass rounded-2xl p-4">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <h4 class="font-semibold text-slate-800">Développement Web</h4>
+                <p class="text-sm text-slate-500">WEB-101 • 14:00 - 16:00</p>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-medium">Terminé</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="flex -space-x-2">
+                <div class="w-8 h-8 rounded-full bg-indigo-400 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-rose-400 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-teal-400 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-xs font-medium text-slate-600">+25</div>
+              </div>
+              <div class="flex-1 flex justify-end gap-3 text-sm">
+                <span class="text-emerald-600">26 ✓</span>
+                <span class="text-red-600">2 ✗</span>
+                <span class="text-amber-600">0 ⏰</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl p-4">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <h4 class="font-semibold text-slate-800">Introduction à la Programmation</h4>
+                <p class="text-sm text-slate-500">INFO-101 • 08:00 - 10:00</p>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-medium">Terminé</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="flex -space-x-2">
+                <div class="w-8 h-8 rounded-full bg-blue-400 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-emerald-400 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-purple-400 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-xs font-medium text-slate-600">+20</div>
+              </div>
+              <div class="flex-1 flex justify-end gap-3 text-sm">
+                <span class="text-emerald-600">22 ✓</span>
+                <span class="text-red-600">1 ✗</span>
+                <span class="text-amber-600">1 ⏰</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- This Week -->
+      <div>
+        <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-3">Cette semaine</h3>
+        <div class="space-y-3">
+          <div class="glass rounded-2xl p-4">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <h4 class="font-semibold text-slate-800">Structures de Données</h4>
+                <p class="text-sm text-slate-500">INFO-201 • Lun 13 jan, 10:30</p>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-medium">Terminé</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="flex -space-x-2">
+                <div class="w-8 h-8 rounded-full bg-pink-400 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-amber-400 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-cyan-400 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-xs font-medium text-slate-600">+18</div>
+              </div>
+              <div class="flex-1 flex justify-end gap-3 text-sm">
+                <span class="text-emerald-600">19 ✓</span>
+                <span class="text-red-600">3 ✗</span>
+                <span class="text-amber-600">0 ⏰</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab Bar -->
+    <div class="glass border-t border-white/30 px-6 py-3 flex justify-around" style="padding-bottom: 34px;">
+      <div class="flex flex-col items-center gap-1">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center">
+          <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        </div>
+        <span class="text-xs font-medium text-slate-400">Présences</span>
+      </div>
+      <div class="flex flex-col items-center gap-1">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center">
+          <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/></svg>
+        </div>
+        <span class="text-xs font-medium text-slate-400">Étudiants</span>
+      </div>
+      <div class="flex flex-col items-center gap-1">
+        <div class="w-10 h-10 rounded-xl bg-blue-500 flex items-center justify-center">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <span class="text-xs font-medium text-blue-600">Historique</span>
+      </div>
+      <div class="flex flex-col items-center gap-1">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center">
+          <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        </div>
+        <span class="text-xs font-medium text-slate-400">Profil</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
