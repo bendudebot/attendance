@@ -32,7 +32,10 @@ services:
       - ./uploads:/app/uploads
 
   web:
-    build: ../web
+    build:
+      context: ../web
+      args:
+        - NEXT_PUBLIC_API_URL=http://localhost:3001
     container_name: attendance-web
     depends_on:
       - api
