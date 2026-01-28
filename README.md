@@ -100,44 +100,48 @@
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- Docker & Docker Compose
-- Node.js 18+ (for local development)
-
-### Using Docker (Recommended)
+### Option 1: One Command (Docker)
 
 ```bash
-# Clone the repository
 git clone https://github.com/bendudebot/attendance.git
 cd attendance
-
-# Start the services
-cd backend
-docker-compose up -d
-
-# Run migrations and seed data
-docker-compose exec api npx prisma migrate deploy
-docker-compose exec api npx prisma db seed
-
-# The API is now running at http://localhost:3001
+chmod +x scripts/*.sh
+./scripts/docker-start.sh
 ```
 
-### Local Development
+**That's it!** 🎉 This will:
+- ✅ Start PostgreSQL database
+- ✅ Run all migrations
+- ✅ Seed test data (2 users, 3 classes, 15 students, ~150 attendance records)
+- ✅ Start the API server at http://localhost:3001
+
+### Option 2: Local Development
 
 ```bash
-# Backend
+# Terminal 1: Database + Backend
 cd backend
-cp .env.example .env
+docker-compose up -d db          # Start PostgreSQL
 npm install
-npm run db:migrate
-npm run db:seed
-npm run dev
+npx prisma migrate dev           # Run migrations
+npx prisma db seed               # Seed test data
+npm run dev                      # API at http://localhost:3001
+```
 
-# Frontend (in another terminal)
+```bash
+# Terminal 2: Web Frontend
 cd web
 npm install
-npm run dev
+npm run dev                      # Web at http://localhost:3000
 ```
+
+### 🔐 Test Accounts
+
+| Role | Email | Password |
+|------|-------|----------|
+| **Admin** | admin@attendance.app | admin123 |
+| **Teacher** | teacher@attendance.app | teacher123 |
+
+📖 **Full setup guide:** [docs/QUICKSTART.md](docs/QUICKSTART.md)
 
 ### Test Accounts
 
